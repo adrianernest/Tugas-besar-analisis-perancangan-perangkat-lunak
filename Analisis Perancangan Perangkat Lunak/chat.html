@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeCampus - Chat Konselor</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-shield-alt logo-icon"></i>
+                    <span>SafeCampus</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Beranda
+                    </a>
+                    <a href="report.html" class="nav-link">
+                        <i class="fas fa-flag"></i> Laporkan
+                    </a>
+                    <a href="chat.html" class="nav-link active">
+                        <i class="fas fa-comments"></i> Chat
+                    </a>
+                    <a href="history.html" class="nav-link">
+                        <i class="fas fa-history"></i> Riwayat
+                    </a>
+                    <a href="admin.html" class="nav-link">
+                        <i class="fas fa-user-tie"></i> Admin
+                    </a>
+                </div>
+                
+                <div class="user-menu">
+                    <div class="notification" id="notificationIcon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">2</span>
+                    </div>
+                    <div class="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Rania+Mahasiswa&background=80CBC4&color=fff" 
+                             alt="Rania Mahasiswa" width="40" height="40" style="border-radius: 50%;">
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Chat Container -->
+    <main class="chat-container container">
+        <!-- Counselor List Sidebar -->
+        <aside class="counselor-sidebar">
+            <div class="sidebar-header">
+                <h2><i class="fas fa-user-tie"></i> Konselor Tersedia</h2>
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Cari konselor..." id="searchCounselor">
+                </div>
+            </div>
+            
+            <div class="counselor-list" id="counselorList">
+                <!-- Counselor items will be loaded by JavaScript -->
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="encryption-notice">
+                    <i class="fas fa-lock"></i>
+                    <div>
+                        <h4>Percakapan Aman</h4>
+                        <p>Semua pesan dienkripsi end-to-end</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <div class="main-chat-area">
+            <!-- Chat Header -->
+            <div class="chat-header" id="chatHeader">
+                <div class="chat-partner-info">
+                    <div class="partner-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Budi+Konselor&background=80CBC4&color=fff" 
+                             alt="Konselor" id="partnerAvatar" width="48" height="48">
+                        <span class="online-status" id="onlineStatus"></span>
+                    </div>
+                    <div class="partner-details">
+                        <h3 id="partnerName">Pilih Konselor</h3>
+                        <p class="partner-status" id="partnerStatus">Pilih konselor untuk memulai chat</p>
+                    </div>
+                </div>
+                
+                <div class="chat-actions">
+                    <button class="btn-icon" id="counselorInfoBtn" title="Info Konselor">
+                        <i class="fas fa-info-circle"></i>
+                    </button>
+                    <button class="btn-icon" id="reportChatBtn" title="Laporkan Percakapan">
+                        <i class="fas fa-flag"></i>
+                    </button>
+                    <button class="btn-icon" id="chatMenuBtn" title="Menu">
+                        <i class="fas fa-ellipsis-v"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Messages Area -->
+            <div class="chat-messages-container">
+                <!-- System Messages -->
+                <div class="system-messages">
+                    <div class="system-message" id="encryptionMessage">
+                        <i class="fas fa-lock"></i>
+                        <span>Percakapan ini aman dan terenkripsi end-to-end</span>
+                    </div>
+                    <div class="system-message" id="connectionMessage">
+                        <i class="fas fa-clock"></i>
+                        <span>Terhubung: <span id="connectionTime">-</span></span>
+                    </div>
+                </div>
+
+                <!-- Messages Container -->
+                <div class="messages-container" id="messagesContainer">
+                    <!-- Messages will be loaded here -->
+                    <div class="empty-chat-state">
+                        <i class="fas fa-comments"></i>
+                        <h3>Mulai Percakapan</h3>
+                        <p>Pilih konselor dari daftar di sebelah kiri untuk memulai chat</p>
+                        <div class="empty-chat-tips">
+                            <p><i class="fas fa-lightbulb"></i> Tips chat yang efektif:</p>
+                            <ul>
+                                <li>Jelaskan masalah dengan jelas dan detail</li>
+                                <li>Sebutkan apa yang Anda rasakan</li>
+                                <li>Jangan ragu bertanya jika tidak mengerti</li>
+                                <li>Konselor di sini untuk membantu, bukan menghakimi</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Typing Indicator -->
+                <div class="typing-indicator" id="typingIndicator">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p><span id="typingName">Konselor</span> sedang mengetik...</p>
+                </div>
+            </div>
+
+            <!-- Chat Input Area -->
+            <div class="chat-input-area">
+                <div class="input-tools">
+                    <button class="btn-icon" id="attachFileBtn" title="Lampirkan File">
+                        <i class="fas fa-paperclip"></i>
+                    </button>
+                    <button class="btn-icon" id="recordAudioBtn" title="Rekam Audio">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                    <button class="btn-icon" id="emojiBtn" title="Emoji">
+                        <i class="fas fa-smile"></i>
+                    </button>
+                </div>
+                
+                <div class="message-input-container">
+                    <textarea class="message-input" id="messageInput" 
+                              placeholder="Ketik pesan Anda di sini..." 
+                              rows="1"></textarea>
+                    <button class="btn btn-primary send-btn" id="sendMessageBtn" disabled>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                
+                <div class="quick-actions">
+                    <button class="btn btn-outline btn-sm" id="scheduleBtn">
+                        <i class="fas fa-calendar-alt"></i> Minta Jadwal
+                    </button>
+                    <button class="btn btn-outline btn-sm" id="createReportBtn">
+                        <i class="fas fa-file-alt"></i> Buat Laporan
+                    </button>
+                    <button class="btn btn-outline btn-sm" id="endSessionBtn">
+                        <i class="fas fa-sign-out-alt"></i> Akhiri Sesi
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Counselor Info Modal -->
+    <div class="modal-overlay" id="counselorInfoModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-user-tie"></i> Info Konselor</h3>
+                <button class="btn-icon close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="counselor-profile" id="counselorProfile">
+                    <!-- Counselor info will be loaded here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline close-modal">Tutup</button>
+                <button class="btn btn-primary" id="startChatWithCounselor">Mulai Chat</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Schedule Modal -->
+    <div class="modal-overlay" id="scheduleModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-calendar-alt"></i> Minta Jadwal Konseling</h3>
+                <button class="btn-icon close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <!-- Schedule form will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="bottom-nav-item">
+            <i class="fas fa-home bottom-nav-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="report.html" class="bottom-nav-item">
+            <i class="fas fa-flag bottom-nav-icon"></i>
+            <span>Lapor</span>
+        </a>
+        <a href="chat.html" class="bottom-nav-item active">
+            <i class="fas fa-comments bottom-nav-icon"></i>
+            <span>Chat</span>
+        </a>
+        <a href="history.html" class="bottom-nav-item">
+            <i class="fas fa-history bottom-nav-icon"></i>
+            <span>Riwayat</span>
+        </a>
+        <a href="#" class="bottom-nav-item" id="mobileEmergencyBtn">
+            <i class="fas fa-exclamation-triangle bottom-nav-icon"></i>
+            <span>Darurat</span>
+        </a>
+    </nav>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+    <script src="js/chat.js"></script>
+</body>
+</html>

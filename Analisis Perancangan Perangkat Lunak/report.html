@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeCampus - Laporkan Bullying</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/report.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-shield-alt logo-icon"></i>
+                    <span>SafeCampus</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Beranda
+                    </a>
+                    <a href="report.html" class="nav-link active">
+                        <i class="fas fa-flag"></i> Laporkan
+                    </a>
+                    <a href="chat.html" class="nav-link">
+                        <i class="fas fa-comments"></i> Chat
+                    </a>
+                    <a href="history.html" class="nav-link">
+                        <i class="fas fa-history"></i> Riwayat
+                    </a>
+                    <a href="admin.html" class="nav-link">
+                        <i class="fas fa-user-tie"></i> Admin
+                    </a>
+                </div>
+                
+                <div class="user-menu">
+                    <div class="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Rania+Mahasiswa&background=80CBC4&color=fff" 
+                             alt="Rania Mahasiswa" width="40" height="40" style="border-radius: 50%;">
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Report Header -->
+        <section class="report-header">
+            <div class="breadcrumb">
+                <a href="index.html"><i class="fas fa-home"></i> Beranda</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Laporkan Bullying</span>
+            </div>
+            
+            <h1><i class="fas fa-flag"></i> Laporkan Kasus Bullying</h1>
+            <p class="subtitle">Laporkan dengan aman dan rahasia. Identitas Anda terlindungi.</p>
+            
+            <div class="report-steps">
+                <div class="step active">
+                    <div class="step-number">1</div>
+                    <div class="step-text">Isi Data</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">Unggah Bukti</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-text">Konfirmasi</div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-text">Selesai</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Report Form -->
+        <form id="bullyingReportForm" class="report-form">
+            <!-- Step 1: Incident Details -->
+            <div class="form-step active" id="step1">
+                <div class="step-header">
+                    <h2><i class="fas fa-info-circle"></i> Detail Kejadian</h2>
+                    <p>Silakan isi informasi tentang kejadian bullying</p>
+                </div>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-tag"></i> Jenis Bullying</h3>
+                    <p class="form-help">Pilih jenis bullying yang sesuai dengan kejadian</p>
+                    
+                    <div class="bullying-types">
+                        <label class="type-option">
+                            <input type="radio" name="bullyingType" value="verbal" required>
+                            <div class type-card>
+                                <i class="fas fa-comment-dots"></i>
+                                <h4>Verbal Bullying</h4>
+                                <p>Menghina, mengolok-olok, mengancam secara verbal</p>
+                            </div>
+                        </label>
+                        
+                        <label class="type-option">
+                            <input type="radio" name="bullyingType" value="physical">
+                            <div class="type-card">
+                                <i class="fas fa-user-injured"></i>
+                                <h4>Fisik Bullying</h4>
+                                <p>Memukul, mendorong, merusak barang, kontak fisik</p>
+                            </div>
+                        </label>
+                        
+                        <label class="type-option">
+                            <input type="radio" name="bullyingType" value="cyber">
+                            <div class="type-card">
+                                <i class="fas fa-laptop"></i>
+                                <h4>Cyberbullying</h4>
+                                <p>Bullying melalui media sosial, WA, email, atau online</p>
+                            </div>
+                        </label>
+                        
+                        <label class="type-option">
+                            <input type="radio" name="bullyingType" value="social">
+                            <div class="type-card">
+                                <i class="fas fa-user-friends"></i>
+                                <h4>Social Bullying</h4>
+                                <p>Mengucilkan, menyebarkan rumor, merusak reputasi</p>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-map-marker-alt"></i> Lokasi Kejadian</h3>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Gedung/Fakultas</label>
+                            <select class="form-control" name="building" required>
+                                <option value="">Pilih gedung...</option>
+                                <option value="fti">Fakultas Teknologi Informasi</option>
+                                <option value="feb">Fakultas Ekonomi dan Bisnis</option>
+                                <option value="ft">Fakultas Teknik</option>
+                                <option value="other">Lainnya</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Ruang/Tempat</label>
+                            <input type="text" class="form-control" name="room" 
+                                   placeholder="Contoh: Lab Komputer 3, Kantin Utara" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Tanggal dan Waktu Kejadian</label>
+                        <div class="form-row">
+                            <input type="date" class="form-control" name="incidentDate" required>
+                            <input type="time" class="form-control" name="incidentTime" required>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-align-left"></i> Deskripsi Kejadian</h3>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Ceritakan kejadian secara detail</label>
+                        <textarea class="form-control" name="description" rows="6" 
+                                  placeholder="Jelaskan kejadian dengan jelas. Siapa yang terlibat? Apa yang terjadi? Bagaimana perasaan Anda?"
+                                  required></textarea>
+                        <p class="form-help">Semakin detail informasi yang diberikan, semakin mudah penanganannya</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Dampak yang dirasakan</label>
+                        <div class="impact-tags">
+                            <label class="tag-option">
+                                <input type="checkbox" name="impact[]" value="stress">
+                                <span>Stres/cemas</span>
+                            </label>
+                            <label class="tag-option">
+                                <input type="checkbox" name="impact[]" value="sleep">
+                                <span>Gangguan tidur</span>
+                            </label>
+                            <label class="tag-option">
+                                <input type="checkbox" name="impact[]" value="academic">
+                                <span>Penurunan prestasi</span>
+                            </label>
+                            <label class="tag-option">
+                                <input type="checkbox" name="impact[]" value="social">
+                                <span>Menghindari sosial</span>
+                            </label>
+                            <label class="tag-option">
+                                <input type="checkbox" name="impact[]" value="other">
+                                <span>Lainnya</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-outline" id="cancelReport">Batalkan</button>
+                    <button type="button" class="btn btn-primary" id="nextStep1">Lanjut <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Step 2: Evidence Upload -->
+            <div class="form-step" id="step2">
+                <div class="step-header">
+                    <h2><i class="fas fa-paperclip"></i> Bukti dan Lampiran</h2>
+                    <p>Unggah bukti pendukung (opsional, tapi sangat membantu)</p>
+                </div>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-upload"></i> Unggah Bukti</h3>
+                    
+                    <div class="upload-area" id="uploadArea">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <h4>Drop file di sini atau klik untuk memilih</h4>
+                        <p>Format yang didukung: JPG, PNG, PDF, MP4, MP3 (Maks. 10MB per file)</p>
+                        <input type="file" id="fileInput" multiple style="display: none;">
+                    </div>
+                    
+                    <div class="file-list" id="fileList">
+                        <!-- Files will be listed here -->
+                    </div>
+                    
+                    <div class="upload-tips">
+                        <h4><i class="fas fa-lightbulb"></i> Tips bukti yang baik:</h4>
+                        <ul>
+                            <li>Screenshot percakapan atau komentar</li>
+                            <li>Foto/video kejadian (jika ada)</li>
+                            <li>Dokumen atau email yang relevan</li>
+                            <li>Nama file jangan mengandung identitas pribadi</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="form-section">
+                    <h3><i class="fas fa-user-secret"></i> Opsi Anonimitas</h3>
+                    
+                    <div class="anonymity-options">
+                        <label class="option-card">
+                            <input type="radio" name="anonymity" value="anonymous" checked>
+                            <div class="option-content">
+                                <i class="fas fa-user-secret"></i>
+                                <div>
+                                    <h4>Laporkan sebagai Anonim</h4>
+                                    <p>Identitas Anda tidak akan diketahui oleh siapapun</p>
+                                    <small class="option-note">Direkomendasikan untuk keamanan maksimal</small>
+                                </div>
+                            </div>
+                        </label>
+                        
+                        <label class="option-card">
+                            <input type="radio" name="anonymity" value="identified">
+                            <div class="option-content">
+                                <i class="fas fa-user-check"></i>
+                                <div>
+                                    <h4>Tampilkan Identitas</h4>
+                                    <p>Hanya konselor dan admin yang bisa melihat identitas Anda</p>
+                                    <small class="option-note">Untuk kasus yang membutuhkan follow-up langsung</small>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-outline" id="prevStep2"><i class="fas fa-arrow-left"></i> Kembali</button>
+                    <button type="button" class="btn btn-primary" id="nextStep2">Lanjut <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+            
+            <!-- Step 3: Review & Submit -->
+            <div class="form-step" id="step3">
+                <div class="step-header">
+                    <h2><i class="fas fa-check-circle"></i> Review & Konfirmasi</h2>
+                    <p>Periksa kembali informasi yang sudah diisi</p>
+                </div>
+                
+                <div class="review-summary">
+                    <div class="review-section">
+                        <h3><i class="fas fa-info-circle"></i> Detail Laporan</h3>
+                        <div class="review-item">
+                            <strong>Jenis Bullying:</strong>
+                            <span id="reviewType">-</span>
+                        </div>
+                        <div class="review-item">
+                            <strong>Lokasi:</strong>
+                            <span id="reviewLocation">-</span>
+                        </div>
+                        <div class="review-item">
+                            <strong>Tanggal & Waktu:</strong>
+                            <span id="reviewDateTime">-</span>
+                        </div>
+                        <div class="review-item">
+                            <strong>Deskripsi:</strong>
+                            <p id="reviewDescription" class="review-text">-</p>
+                        </div>
+                    </div>
+                    
+                    <div class="review-section">
+                        <h3><i class="fas fa-paperclip"></i> Bukti</h3>
+                        <div class="review-item">
+                            <strong>Jumlah File:</strong>
+                            <span id="reviewFiles">0 file</span>
+                        </div>
+                        <div class="review-item">
+                            <strong>Opsi Anonimitas:</strong>
+                            <span id="reviewAnonymity">-</span>
+                        </div>
+                    </div>
+                    
+                    <div class="review-section">
+                        <h3><i class="fas fa-shield-alt"></i> Keamanan & Privasi</h3>
+                        <div class="privacy-notice">
+                            <p><i class="fas fa-check"></i> Data Anda dienkripsi dengan AES-256</p>
+                            <p><i class="fas fa-check"></i> Hanya konselor berwenang yang bisa mengakses</p>
+                            <p><i class="fas fa-check"></i> Laporan akan ditanggapi dalam 24 jam</p>
+                            <p><i class="fas fa-check"></i> Anda bisa pantau status di halaman Riwayat</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="confirmation-check">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="confirmAccuracy" required>
+                        <span>Saya telah memeriksa dan mengonfirmasi keakuratan informasi yang diberikan</span>
+                    </label>
+                    
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="confirmPrivacy" required>
+                        <span>Saya memahami bahwa data akan ditangani sesuai kebijakan privasi SafeCampus</span>
+                    </label>
+                </div>
+                
+                <div class="form-navigation">
+                    <button type="button" class="btn btn-outline" id="prevStep3"><i class="fas fa-arrow-left"></i> Kembali</button>
+                    <button type="submit" class="btn btn-primary" id="submitReport">
+                        <i class="fas fa-paper-plane"></i> Kirim Laporan
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Step 4: Success -->
+            <div class="form-step" id="step4">
+                <div class="success-screen">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2>Laporan Berhasil Dikirim!</h2>
+                    <p class="success-message">Laporan Anda telah diterima dan akan segera diproses oleh tim konselor.</p>
+                    
+                    <div class="success-details">
+                        <div class="detail-card">
+                            <i class="fas fa-hashtag"></i>
+                            <div>
+                                <h4>Nomor Laporan</h4>
+                                <p id="reportNumber">#RPT-007</p>
+                            </div>
+                        </div>
+                        <div class="detail-card">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>Estimasi Respon</h4>
+                                <p>24 jam kerja</p>
+                            </div>
+                        </div>
+                        <div class="detail-card">
+                            <i class="fas fa-user-tie"></i>
+                            <div>
+                                <h4>Ditangani oleh</h4>
+                                <p>Konselor Berwenang</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="next-steps">
+                        <h4><i class="fas fa-list-ol"></i> Langkah Selanjutnya:</h4>
+                        <ol>
+                            <li>Pantau status laporan di halaman <strong>Riwayat</strong></li>
+                            <li>Anda akan mendapat notifikasi saat ada update</li>
+                            <li>Konselor mungkin akan menghubungi untuk klarifikasi</li>
+                            <li>Hasil penanganan akan dikirim melalui aplikasi</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <a href="history.html" class="btn btn-primary">
+                            <i class="fas fa-history"></i> Lihat Riwayat
+                        </a>
+                        <a href="index.html" class="btn btn-outline">
+                            <i class="fas fa-home"></i> Kembali ke Beranda
+                        </a>
+                        <button class="btn btn-outline" id="newReport">
+                            <i class="fas fa-plus"></i> Buat Laporan Baru
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+        
+        <!-- Safety Notice -->
+        <div class="safety-notice card-teal">
+            <div class="notice-header">
+                <i class="fas fa-shield-alt"></i>
+                <h3>Ingat: Keselamatan Anda yang Utama</h3>
+            </div>
+            <div class="notice-content">
+                <p>Jika Anda merasa dalam bahaya fisik atau darurat, segera:</p>
+                <div class="emergency-contacts">
+                    <a href="tel:119" class="emergency-contact">
+                        <i class="fas fa-phone-alt"></i>
+                        <span>Hubungi 119</span>
+                        <small>Layanan Psikologi Darurat</small>
+                    </a>
+                    <a href="tel:112" class="emergency-contact">
+                        <i class="fas fa-phone-volume"></i>
+                        <span>Hubungi 112</span>
+                        <small>Emergency Call</small>
+                    </a>
+                    <button class="emergency-contact" id="emergencyChatBtn">
+                        <i class="fas fa-comment-medical"></i>
+                        <span>Chat Darurat</span>
+                        <small>Konselor 24/7</small>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="bottom-nav-item">
+            <i class="fas fa-home bottom-nav-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="report.html" class="bottom-nav-item active">
+            <i class="fas fa-flag bottom-nav-icon"></i>
+            <span>Lapor</span>
+        </a>
+        <a href="chat.html" class="bottom-nav-item">
+            <i class="fas fa-comments bottom-nav-icon"></i>
+            <span>Chat</span>
+        </a>
+        <a href="history.html" class="bottom-nav-item">
+            <i class="fas fa-history bottom-nav-icon"></i>
+            <span>Riwayat</span>
+        </a>
+        <a href="#" class="bottom-nav-item" id="mobilePanicBtn">
+            <i class="fas fa-exclamation-triangle bottom-nav-icon"></i>
+            <span>Darurat</span>
+        </a>
+    </nav>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+    <script src="js/report.js"></script>
+</body>
+</html>

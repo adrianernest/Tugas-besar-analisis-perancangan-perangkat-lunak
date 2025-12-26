@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeCampus - Admin Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-shield-alt logo-icon"></i>
+                    <span>SafeCampus</span>
+                    <span class="logo-badge">Admin</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Beranda
+                    </a>
+                    <a href="admin.html" class="nav-link active">
+                        <i class="fas fa-tachometer-alt"></i> Dashboard
+                    </a>
+                    <a href="admin-reports.html" class="nav-link">
+                        <i class="fas fa-flag"></i> Laporan
+                    </a>
+                    <a href="admin-counseling.html" class="nav-link">
+                        <i class="fas fa-comments"></i> Konseling
+                    </a>
+                    <a href="admin-users.html" class="nav-link">
+                        <i class="fas fa-users"></i> Pengguna
+                    </a>
+                </div>
+                
+                <div class="user-menu">
+                    <div class="notification" id="adminNotification">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">12</span>
+                    </div>
+                    <div class="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Admin+Konselor&background=FF7043&color=fff" 
+                             alt="Admin Konselor" width="40" height="40" style="border-radius: 50%;">
+                        <div class="user-status">
+                            <span class="status-dot"></span>
+                            <span class="status-text">Admin</span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Welcome & Quick Stats -->
+        <section class="admin-welcome">
+            <div class="welcome-card">
+                <div class="welcome-content">
+                    <h1><i class="fas fa-user-tie"></i> Halo, Konselor Budi!</h1>
+                    <p class="welcome-subtitle">Dashboard Admin SafeCampus. Pantau dan kelola semua aktivitas pelaporan bullying.</p>
+                    
+                    <div class="admin-stats-quick">
+                        <div class="stat-item">
+                            <i class="fas fa-inbox"></i>
+                            <div>
+                                <h3>Laporan Baru</h3>
+                                <p class="stat-number">8</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Menunggu Tindakan</h3>
+                                <p class="stat-number">12</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-comments"></i>
+                            <div>
+                                <h3>Chat Aktif</h3>
+                                <p class="stat-number">5</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <div>
+                                <h3>Jadwal Hari Ini</h3>
+                                <p class="stat-number">3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="welcome-actions">
+                    <button class="btn btn-primary" id="quickActionBtn">
+                        <i class="fas fa-bolt"></i> Tindakan Cepat
+                    </button>
+                    <button class="btn btn-outline" id="viewAllReports">
+                        <i class="fas fa-list"></i> Lihat Semua Laporan
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Dashboard Grid -->
+        <div class="dashboard-grid">
+            <!-- Left Column -->
+            <div class="dashboard-column">
+                <!-- Pending Reports -->
+                <section class="dashboard-card pending-reports">
+                    <div class="card-header">
+                        <h2><i class="fas fa-hourglass-half"></i> Laporan Menunggu</h2>
+                        <span class="card-badge">12</span>
+                    </div>
+                    
+                    <div class="reports-list" id="pendingReportsList">
+                        <!-- Report items loaded by JS -->
+                    </div>
+                    
+                    <div class="card-footer">
+                        <a href="admin-reports.html?filter=pending" class="btn btn-outline btn-sm">
+                            <i class="fas fa-eye"></i> Lihat Semua
+                        </a>
+                    </div>
+                </section>
+
+                <!-- Recent Activities -->
+                <section class="dashboard-card recent-activities">
+                    <div class="card-header">
+                        <h2><i class="fas fa-history"></i> Aktivitas Terbaru</h2>
+                    </div>
+                    
+                    <div class="activities-list">
+                        <div class="activity-item">
+                            <div class="activity-icon success">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Laporan #RPT-012 Diselesaikan</h4>
+                                <p class="activity-meta">Cyberbullying • 5 menit lalu</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Laporan #RPT-011 Butuh Perhatian</h4>
+                                <p class="activity-meta">Verbal Bullying • 15 menit lalu</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon info">
+                                <i class="fas fa-comment"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Chat baru dari Mahasiswa</h4>
+                                <p class="activity-meta">Konseling • 30 menit lalu</p>
+                            </div>
+                        </div>
+                        <div class="activity-item">
+                            <div class="activity-icon">
+                                <i class="fas fa-user-plus"></i>
+                            </div>
+                            <div class="activity-content">
+                                <h4>Pengguna baru terdaftar</h4>
+                                <p class="activity-meta">Registrasi • 1 jam lalu</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="dashboard-column">
+                <!-- Statistics Overview -->
+                <section class="dashboard-card statistics-overview">
+                    <div class="card-header">
+                        <h2><i class="fas fa-chart-bar"></i> Statistik Bulanan</h2>
+                        <select class="form-control-sm" id="statisticsPeriod">
+                            <option value="month">Desember 2023</option>
+                            <option value="quarter">Q4 2023</option>
+                            <option value="year">2023</option>
+                        </select>
+                    </div>
+                    
+                    <div class="statistics-grid">
+                        <div class="stat-box total">
+                            <i class="fas fa-file-alt"></i>
+                            <div>
+                                <h3>Total Laporan</h3>
+                                <p class="stat-number">156</p>
+                                <p class="stat-trend up">+12% dari bulan lalu</p>
+                            </div>
+                        </div>
+                        <div class="stat-box resolved">
+                            <i class="fas fa-check-circle"></i>
+                            <div>
+                                <h3>Terselesaikan</h3>
+                                <p class="stat-number">128</p>
+                                <p class="stat-trend up">+8% dari bulan lalu</p>
+                            </div>
+                        </div>
+                        <div class="stat-box pending">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Dalam Proses</h3>
+                                <p class="stat-number">24</p>
+                                <p class="stat-trend down">-3% dari bulan lalu</p>
+                            </div>
+                        </div>
+                        <div class="stat-box response">
+                            <i class="fas fa-stopwatch"></i>
+                            <div>
+                                <h3>Waktu Respon</h3>
+                                <p class="stat-number">18 jam</p>
+                                <p class="stat-trend up">-2 jam dari bulan lalu</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <canvas id="reportsChart" width="400" height="200"></canvas>
+                    </div>
+                </section>
+
+                <!-- Counselor Availability -->
+                <section class="dashboard-card counselor-availability">
+                    <div class="card-header">
+                        <h2><i class="fas fa-user-clock"></i> Ketersediaan Konselor</h2>
+                        <button class="btn-icon" id="refreshAvailability">
+                            <i class="fas fa-sync-alt"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="counselors-list">
+                        <div class="counselor-status online">
+                            <div class="counselor-info">
+                                <img src="https://ui-avatars.com/api/?name=Budi+Konselor&background=80CBC4&color=fff" 
+                                     alt="Budi" class="counselor-avatar">
+                                <div>
+                                    <h4>Budi Santoso</h4>
+                                    <p class="counselor-specialization">Anxiety & Stress</p>
+                                </div>
+                            </div>
+                            <div class="availability-info">
+                                <span class="status-badge online">🟢 Online</span>
+                                <p class="load-info">Sedang menangani 3 kasus</p>
+                            </div>
+                        </div>
+                        
+                        <div class="counselor-status busy">
+                            <div class="counselor-info">
+                                <img src="https://ui-avatars.com/api/?name=Sari+Konselor&background=FF7043&color=fff" 
+                                     alt="Sari" class="counselor-avatar">
+                                <div>
+                                    <h4>Sari Wijaya</h4>
+                                    <p class="counselor-specialization">Bullying Recovery</p>
+                                </div>
+                            </div>
+                            <div class="availability-info">
+                                <span class="status-badge busy">🟡 Sibuk</span>
+                                <p class="load-info">Sedang konseling</p>
+                            </div>
+                        </div>
+                        
+                        <div class="counselor-status offline">
+                            <div class="counselor-info">
+                                <img src="https://ui-avatars.com/api/?name=Adi+Konselor&background=546E7A&color=fff" 
+                                     alt="Adi" class="counselor-avatar">
+                                <div>
+                                    <h4>Adi Pratama</h4>
+                                    <p class="counselor-specialization">Family Issues</p>
+                                </div>
+                            </div>
+                            <div class="availability-info">
+                                <span class="status-badge offline">⚪ Offline</span>
+                                <p class="load-info">Tersedia besok</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="availability-summary">
+                        <div class="summary-item">
+                            <span class="summary-label">Konselor Aktif:</span>
+                            <span class="summary-value">2/3</span>
+                        </div>
+                        <div class="summary-item">
+                            <span class="summary-label">Rata-rata Beban:</span>
+                            <span class="summary-value">4 kasus/konselor</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Emergency & Priority Section -->
+        <section class="dashboard-card emergency-section">
+            <div class="card-header">
+                <h2><i class="fas fa-exclamation-triangle"></i> Prioritas & Darurat</h2>
+                <div class="emergency-actions">
+                    <button class="btn btn-emergency btn-sm" id="panicMonitorBtn">
+                        <i class="fas fa-heartbeat"></i> Monitor Panic Button
+                    </button>
+                    <button class="btn btn-outline btn-sm" id="viewEmergencies">
+                        <i class="fas fa-list"></i> Lihat Semua Darurat
+                    </button>
+                </div>
+            </div>
+            
+            <div class="emergency-grid">
+                <div class="emergency-card high">
+                    <div class="emergency-header">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>Prioritas Tinggi</h3>
+                    </div>
+                    <div class="emergency-content">
+                        <p class="emergency-count">5 Laporan</p>
+                        <p class="emergency-info">Membutuhkan tindakan segera</p>
+                        <button class="btn btn-outline btn-sm">Tinjau Sekarang</button>
+                    </div>
+                </div>
+                
+                <div class="emergency-card medium">
+                    <div class="emergency-header">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Prioritas Sedang</h3>
+                    </div>
+                    <div class="emergency-content">
+                        <p class="emergency-count">12 Laporan</p>
+                        <p class="emergency-info">Tindakan dalam 24 jam</p>
+                        <button class="btn btn-outline btn-sm">Tinjau</button>
+                    </div>
+                </div>
+                
+                <div class="emergency-card low">
+                    <div class="emergency-header">
+                        <i class="fas fa-info-circle"></i>
+                        <h3>Prioritas Rendah</h3>
+                    </div>
+                    <div class="emergency-content">
+                        <p class="emergency-count">8 Laporan</p>
+                        <p class="emergency-info">Tindakan dalam 3 hari</p>
+                        <button class="btn btn-outline btn-sm">Tinjau</button>
+                    </div>
+                </div>
+                
+                <div class="emergency-card panic">
+                    <div class="emergency-header">
+                        <i class="fas fa-heartbeat"></i>
+                        <h3>Panic Button</h3>
+                    </div>
+                    <div class="emergency-content">
+                        <p class="emergency-count">Aktif 24/7</p>
+                        <p class="emergency-info">3 penggunaan hari ini</p>
+                        <button class="btn btn-emergency btn-sm">Monitor Live</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Actions Panel -->
+        <section class="quick-actions-panel">
+            <h2><i class="fas fa-bolt"></i> Tindakan Cepat</h2>
+            <div class="actions-grid">
+                <button class="action-card" id="assignReportBtn">
+                    <i class="fas fa-user-check"></i>
+                    <h4>Assign Laporan</h4>
+                    <p>Bagikan laporan ke konselor</p>
+                </button>
+                
+                <button class="action-card" id="updateStatusBtn">
+                    <i class="fas fa-sync-alt"></i>
+                    <h4>Update Status</h4>
+                    <p>Ubah status laporan massal</p>
+                </button>
+                
+                <button class="action-card" id="exportDataBtn">
+                    <i class="fas fa-download"></i>
+                    <h4>Ekspor Data</h4>
+                    <p>Export laporan bulanan</p>
+                </button>
+                
+                <button class="action-card" id="scheduleMeetingBtn">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h4>Jadwalkan Rapat</h4>
+                    <p>Buat jadwal tim konselor</p>
+                </button>
+                
+                <button class="action-card" id="sendNotificationBtn">
+                    <i class="fas fa-bell"></i>
+                    <h4>Kirim Notifikasi</h4>
+                    <p>Broadcast ke pengguna</p>
+                </button>
+                
+                <button class="action-card" id="generateReportBtn">
+                    <i class="fas fa-file-chart-line"></i>
+                    <h4>Buat Laporan</h4>
+                    <p>Generate report analisis</p>
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Quick Action Modal -->
+    <div class="modal-overlay" id="quickActionModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-bolt"></i> Tindakan Cepat</h3>
+                <button class="btn-icon close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="quick-action-tabs">
+                    <button class="tab active" data-tab="assign">Assign Laporan</button>
+                    <button class="tab" data-tab="status">Update Status</button>
+                    <button class="tab" data-tab="export">Ekspor Data</button>
+                </div>
+                
+                <div class="tab-content active" id="assignTab">
+                    <div class="form-group">
+                        <label class="form-label">Pilih Laporan</label>
+                        <select class="form-control" id="reportSelect" multiple size="4">
+                            <option value="RPT-012">#RPT-012 - Cyberbullying (Prioritas Tinggi)</option>
+                            <option value="RPT-011">#RPT-011 - Verbal Bullying (Prioritas Sedang)</option>
+                            <option value="RPT-010">#RPT-010 - Fisik Bullying (Menunggu)</option>
+                            <option value="RPT-009">#RPT-009 - Social Bullying (Ditolak)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Assign ke Konselor</label>
+                        <select class="form-control" id="counselorSelect">
+                            <option value="">Pilih konselor...</option>
+                            <option value="csl-001">Budi Santoso (Anxiety & Stress)</option>
+                            <option value="csl-002">Sari Wijaya (Bullying Recovery)</option>
+                            <option value="csl-003">Adi Pratama (Family Issues)</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label class="form-label">Catatan (Opsional)</label>
+                        <textarea class="form-control" id="assignmentNotes" rows="3" placeholder="Tambahkan instruksi khusus..."></textarea>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="statusTab">
+                    <!-- Status update form -->
+                </div>
+                
+                <div class="tab-content" id="exportTab">
+                    <!-- Export form -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline close-modal">Batal</button>
+                <button class="btn btn-primary" id="executeAction">Execute</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="bottom-nav-item">
+            <i class="fas fa-home bottom-nav-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="admin.html" class="bottom-nav-item active">
+            <i class="fas fa-tachometer-alt bottom-nav-icon"></i>
+            <span>Dashboard</span>
+        </a>
+        <a href="admin-reports.html" class="bottom-nav-item">
+            <i class="fas fa-flag bottom-nav-icon"></i>
+            <span>Laporan</span>
+        </a>
+        <a href="admin-counseling.html" class="bottom-nav-item">
+            <i class="fas fa-comments bottom-nav-icon"></i>
+            <span>Konseling</span>
+        </a>
+        <a href="#" class="bottom-nav-item" id="adminQuickAction">
+            <i class="fas fa-bolt bottom-nav-icon"></i>
+            <span>Quick</span>
+        </a>
+    </nav>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

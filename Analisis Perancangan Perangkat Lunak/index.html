@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeCampus - Home</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-shield-alt logo-icon"></i>
+                    <span>SafeCampus</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link active">
+                        <i class="fas fa-home"></i> Beranda
+                    </a>
+                    <a href="report.html" class="nav-link">
+                        <i class="fas fa-flag"></i> Laporkan
+                    </a>
+                    <a href="chat.html" class="nav-link">
+                        <i class="fas fa-comments"></i> Chat
+                    </a>
+                    <a href="history.html" class="nav-link">
+                        <i class="fas fa-history"></i> Riwayat
+                    </a>
+                    <a href="admin.html" class="nav-link">
+                        <i class="fas fa-user-tie"></i> Admin
+                    </a>
+                </div>
+                
+                <div class="user-menu">
+                    <div class="notification" id="notificationIcon">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-badge">3</span>
+                    </div>
+                    <div class="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Rania+Mahasiswa&background=80CBC4&color=fff" 
+                             alt="Rania Mahasiswa" width="40" height="40" style="border-radius: 50%;">
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Welcome Hero -->
+        <section class="welcome-hero">
+            <div class="hero-card card">
+                <div class="hero-content">
+                    <h1>Halo, Rania! 👋</h1>
+                    <p class="hero-subtitle">Semoga harimu menyenangkan. Kami di sini untuk mendengarkan dan mendukung kesehatan mentalmu.</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-shield-check" style="color: var(--muted-teal);"></i>
+                            <div>
+                                <h3>Laporkan dengan Aman</h3>
+                                <p>Identitas Anda terlindungi</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-clock" style="color: var(--muted-teal);"></i>
+                            <div>
+                                <h3>Respon Cepat</h3>
+                                <p>Maksimal 24 jam</p>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-lock" style="color: var(--muted-teal);"></i>
+                            <div>
+                                <h3>Data Terenkripsi</h3>
+                                <p>Keamanan terjamin</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Emergency Panic Button Section -->
+        <section class="emergency-section">
+            <div class="section-header">
+                <h2><i class="fas fa-exclamation-triangle"></i> Bantuan Darurat</h2>
+                <p class="section-subtitle">Gunakan jika Anda membutuhkan bantuan segera</p>
+            </div>
+            
+            <div class="panic-button-container">
+                <button class="btn btn-emergency btn-lg w-100" id="panicButton">
+                    <i class="fas fa-exclamation-circle"></i>
+                    PANIC BUTTON - BANTUAN DARURAT
+                </button>
+                <p class="emergency-info">
+                    <small><i class="fas fa-info-circle"></i> Anda akan langsung terhubung dengan konselor darurat</small>
+                </p>
+            </div>
+        </section>
+
+        <!-- Quick Actions -->
+        <section class="quick-actions-section">
+            <div class="section-header">
+                <h2><i class="fas fa-bolt"></i> Akses Cepat</h2>
+                <p class="section-subtitle">Pilih layanan yang Anda butuhkan</p>
+            </div>
+            
+            <div class="actions-grid">
+                <a href="report.html" class="action-card card">
+                    <div class="action-icon" style="background-color: var(--muted-teal);">
+                        <i class="fas fa-flag"></i>
+                    </div>
+                    <h3>Laporkan Bullying</h3>
+                    <p>Laporkan kasus bullying secara aman dengan opsi anonim</p>
+                    <span class="action-badge">Must Have</span>
+                </a>
+                
+                <a href="chat.html" class="action-card card">
+                    <div class="action-icon" style="background-color: var(--soft-teal);">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Chat Konselor</h3>
+                    <p>Konsultasi langsung dengan konselor kampus</p>
+                    <span class="action-badge">Delighter</span>
+                </a>
+                
+                <a href="#" class="action-card card" id="selfCheckBtn">
+                    <div class="action-icon" style="background-color: #FFB74D;">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h3>Self-Check Mental</h3>
+                    <p>Cek kondisi kesehatan mental dengan kuis sederhana</p>
+                    <span class="action-badge">Satisfier</span>
+                </a>
+                
+                <a href="#" class="action-card card">
+                    <div class="action-icon" style="background-color: #64B5F6;">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3>Edukasi Anti-Bullying</h3>
+                    <p>Artikel dan tips tentang pencegahan bullying</p>
+                    <span class="action-badge">Satisfier</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Recent Reports -->
+        <section class="recent-reports-section">
+            <div class="section-header d-flex align-center justify-between">
+                <div>
+                    <h2><i class="fas fa-history"></i> Status Laporan Terbaru</h2>
+                    <p class="section-subtitle">Pantau perkembangan laporan Anda</p>
+                </div>
+                <a href="history.html" class="btn btn-outline">
+                    <i class="fas fa-eye"></i> Lihat Semua
+                </a>
+            </div>
+            
+            <div class="reports-timeline">
+                <div class="timeline-item status-completed">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>#RPT-005 - Verbal Bullying</h4>
+                            <span class="badge badge-completed">Selesai</span>
+                        </div>
+                        <p class="timeline-description">Laporan bullying verbal di grup WhatsApp kelas</p>
+                        <div class="timeline-footer">
+                            <span><i class="fas fa-user-tie"></i> Konselor Budi</span>
+                            <span><i class="fas fa-calendar"></i> 25 Nov 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item status-processing">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>#RPT-004 - Cyberbullying</h4>
+                            <span class="badge badge-processing">Diproses</span>
+                        </div>
+                        <p class="timeline-description">Akun media sosial dibajak dan disalahgunakan</p>
+                        <div class="timeline-footer">
+                            <span><i class="fas fa-clock"></i> Estimasi: 2-3 hari</span>
+                            <span><i class="fas fa-calendar"></i> 20 Nov 2023</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item status-pending">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h4>#RPT-006 - Fisik Bullying</h4>
+                            <span class="badge badge-pending">Menunggu</span>
+                        </div>
+                        <p class="timeline-description">Dijegal di tangga gedung fakultas</p>
+                        <div class="timeline-footer">
+                            <span><i class="fas fa-hourglass-half"></i> Menunggu verifikasi</span>
+                            <span><i class="fas fa-calendar"></i> 26 Nov 2023</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Educational Content -->
+        <section class="education-section">
+            <div class="section-header">
+                <h2><i class="fas fa-graduation-cap"></i> Edukasi & Pencegahan</h2>
+                <p class="section-subtitle">Tingkatkan kesadaran tentang bullying dan kesehatan mental</p>
+            </div>
+            
+            <div class="articles-grid">
+                <article class="article-card card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Cyberbullying">
+                    </div>
+                    <div class="article-content">
+                        <h4>Mengenal Cyberbullying dan Dampaknya</h4>
+                        <p>Memahami berbagai bentuk bullying di dunia digital dan cara menghadapinya dengan tepat.</p>
+                        <div class="article-tags">
+                            <span class="tag">Digital Safety</span>
+                            <span class="tag">Prevention</span>
+                        </div>
+                        <a href="#" class="article-link">Baca Artikel <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="article-card card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1493711662062-fa541adb3fc8?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Mental Health">
+                    </div>
+                    <div class="article-content">
+                        <h4>5 Strategi Mengelola Stres di Lingkungan Kampus</h4>
+                        <p>Tips praktis untuk menjaga kesehatan mental selama masa perkuliahan yang padat.</p>
+                        <div class="article-tags">
+                            <span class="tag">Mental Health</span>
+                            <span class="tag">Tips</span>
+                        </div>
+                        <a href="#" class="article-link">Baca Artikel <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="article-card card">
+                    <div class="article-image">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" 
+                             alt="Support System">
+                    </div>
+                    <div class="article-content">
+                        <h4>Membangun Support System yang Kuat di Kampus</h4>
+                        <p>Pentingnya memiliki teman dan mentor untuk menghadapi tekanan akademik dan sosial.</p>
+                        <div class="article-tags">
+                            <span class="tag">Community</span>
+                            <span class="tag">Support</span>
+                        </div>
+                        <a href="#" class="article-link">Baca Artikel <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Safety Tips -->
+        <section class="safety-tips card-teal">
+            <div class="section-header">
+                <h2><i class="fas fa-lightbulb"></i> Tips Keamanan</h2>
+            </div>
+            <div class="tips-grid">
+                <div class="tip-item">
+                    <i class="fas fa-user-secret"></i>
+                    <h4>Anonimitas Terjamin</h4>
+                    <p>Anda bisa melaporkan tanpa menyebutkan identitas</p>
+                </div>
+                <div class="tip-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Data Terlindungi</h4>
+                    <p>Semua laporan dienkripsi dengan standar keamanan tinggi</p>
+                </div>
+                <div class="tip-item">
+                    <i class="fas fa-comment-medical"></i>
+                    <h4>Dukungan Profesional</h4>
+                    <p>Konselor berlisensi siap membantu 24/7</p>
+                </div>
+                <div class="tip-item">
+                    <i class="fas fa-history"></i>
+                    <h4>Transparansi Proses</h4>
+                    <p>Pantau status laporan Anda kapan saja</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Panic Button Modal Flow -->
+    <div class="modal-overlay" id="panicModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-exclamation-triangle"></i> Panic Button - Bantuan Darurat</h3>
+                <button class="btn-icon close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <!-- Step 1: Confirmation -->
+                <div class="panic-step active" id="step1">
+                    <div class="step-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <h4>Anda akan terhubung dengan konselor darurat</h4>
+                    <p>Apakah Anda yakin ingin melanjutkan? Konselor akan segera merespon permintaan Anda.</p>
+                    
+                    <div class="confirmation-box">
+                        <p><i class="fas fa-check-circle"></i> Respon real-time dengan konselor</p>
+                        <p><i class="fas fa-check-circle"></i> Percakapan aman dan terenkripsi</p>
+                        <p><i class="fas fa-check-circle"></i> Riwayat akan disimpan secara rahasia</p>
+                    </div>
+                </div>
+                
+                <!-- Step 2: Searching Counselor -->
+                <div class="panic-step" id="step2">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4>Mencari konselor yang tersedia...</h4>
+                    <p>Mohon tunggu sebentar, kami sedang menghubungkan Anda dengan konselor darurat.</p>
+                    
+                    <div class="loading-spinner">
+                        <div class="spinner"></div>
+                    </div>
+                    
+                    <div class="search-status">
+                        <p><i class="fas fa-sync fa-spin"></i> Melakukan pencarian konselor online...</p>
+                    </div>
+                </div>
+                
+                <!-- Step 3: Counselor Found -->
+                <div class="panic-step" id="step3">
+                    <div class="step-icon">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <h4>Konselor ditemukan!</h4>
+                    <p>Anda akan terhubung dengan:</p>
+                    
+                    <div class="counselor-found">
+                        <div class="counselor-avatar">
+                            <img src="https://ui-avatars.com/api/?name=Budi+Darurat&background=FF7043&color=fff" 
+                                 alt="Konselor Darurat" width="60" height="60">
+                        </div>
+                        <div class="counselor-info">
+                            <h5>Budi Santoso</h5>
+                            <p><i class="fas fa-certificate"></i> Konselor Darurat</p>
+                            <p><i class="fas fa-clock"></i> Tersedia sekarang</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Step 4: Fallback Options -->
+                <div class="panic-step" id="step4">
+                    <div class="step-icon">
+                        <i class="fas fa-phone-alt"></i>
+                    </div>
+                    <h4>Tidak ada konselor yang tersedia</h4>
+                    <p>Maaf, saat ini tidak ada konselor yang sedang bertugas. Silakan pilih salah satu opsi berikut:</p>
+                    
+                    <div class="fallback-options">
+                        <button class="btn btn-secondary w-100 mb-1" id="requestCallback">
+                            <i class="fas fa-phone"></i> Minta Dihubungi Kembali
+                        </button>
+                        
+                        <button class="btn btn-outline w-100 mb-1" id="emergencyHotline">
+                            <i class="fas fa-phone-volume"></i> Hotline Darurat: 119
+                        </button>
+                        
+                        <button class="btn btn-outline w-100" id="viewResources">
+                            <i class="fas fa-book-medical"></i> Lihat Sumber Bantuan Lain
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Step 5: Chat Connected -->
+                <div class="panic-step" id="step5">
+                    <div class="step-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h4>Terhubung dengan konselor!</h4>
+                    <p>Anda sekarang terhubung dengan konselor darurat. Silakan mulai percakapan.</p>
+                    
+                    <div class="chat-preview">
+                        <div class="message system">
+                            <p><i class="fas fa-lock"></i> Percakapan ini aman dan terenkripsi</p>
+                        </div>
+                        <div class="message counselor">
+                            <p>Halo, saya konselor darurat. Ada yang bisa saya bantu?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="step-buttons step1-buttons">
+                    <button class="btn btn-outline close-modal">Batal</button>
+                    <button class="btn btn-emergency" id="confirmPanic">Ya, Lanjutkan</button>
+                </div>
+                <div class="step-buttons step2-buttons" style="display: none;">
+                    <button class="btn btn-outline" id="cancelSearch">Batalkan Pencarian</button>
+                </div>
+                <div class="step-buttons step3-buttons" style="display: none;">
+                    <button class="btn btn-outline close-modal">Batalkan</button>
+                    <button class="btn btn-emergency" id="startChat">Mulai Chat</button>
+                </div>
+                <div class="step-buttons step5-buttons" style="display: none;">
+                    <button class="btn btn-emergency w-100" id="goToChat">
+                        <i class="fas fa-comments"></i> Buka Chat Sekarang
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation (Mobile) -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="bottom-nav-item active">
+            <i class="fas fa-home bottom-nav-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="report.html" class="bottom-nav-item">
+            <i class="fas fa-flag bottom-nav-icon"></i>
+            <span>Lapor</span>
+        </a>
+        <a href="chat.html" class="bottom-nav-item">
+            <i class="fas fa-comments bottom-nav-icon"></i>
+            <span>Chat</span>
+        </a>
+        <a href="history.html" class="bottom-nav-item">
+            <i class="fas fa-history bottom-nav-icon"></i>
+            <span>Riwayat</span>
+        </a>
+        <a href="#" class="bottom-nav-item" id="mobilePanic">
+            <i class="fas fa-exclamation-triangle bottom-nav-icon"></i>
+            <span>Darurat</span>
+        </a>
+    </nav>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+    <script src="js/panic-button.js"></script>
+</body>
+</html>

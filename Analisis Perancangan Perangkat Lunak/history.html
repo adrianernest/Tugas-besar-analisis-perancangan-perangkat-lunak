@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SafeCampus - Riwayat</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/history.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-shield-alt logo-icon"></i>
+                    <span>SafeCampus</span>
+                </a>
+                
+                <div class="nav-links">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i> Beranda
+                    </a>
+                    <a href="report.html" class="nav-link">
+                        <i class="fas fa-flag"></i> Laporkan
+                    </a>
+                    <a href="chat.html" class="nav-link">
+                        <i class="fas fa-comments"></i> Chat
+                    </a>
+                    <a href="history.html" class="nav-link active">
+                        <i class="fas fa-history"></i> Riwayat
+                    </a>
+                    <a href="admin.html" class="nav-link">
+                        <i class="fas fa-user-tie"></i> Admin
+                    </a>
+                </div>
+                
+                <div class="user-menu">
+                    <button class="btn btn-outline btn-sm" id="filterBtn">
+                        <i class="fas fa-filter"></i> Filter
+                    </button>
+                    <div class="user-avatar">
+                        <img src="https://ui-avatars.com/api/?name=Rania+Mahasiswa&background=80CBC4&color=fff" 
+                             alt="Rania Mahasiswa" width="40" height="40" style="border-radius: 50%;">
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Page Header -->
+        <div class="page-header">
+            <h1><i class="fas fa-history"></i> Riwayat Saya</h1>
+            <p class="subtitle">Pantau semua laporan, konseling, dan aktivitas Anda</p>
+        </div>
+
+        <!-- Stats Summary -->
+        <div class="stats-summary">
+            <div class="stat-card">
+                <div class="stat-icon total">
+                    <i class="fas fa-file-alt"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Total Laporan</h3>
+                    <p class="stat-number">12</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon completed">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Selesai</h3>
+                    <p class="stat-number">8</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon processing">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Diproses</h3>
+                    <p class="stat-number">3</p>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon pending">
+                    <i class="fas fa-hourglass-half"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>Menunggu</h3>
+                    <p class="stat-number">1</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tabs Navigation -->
+        <div class="tabs-container">
+            <div class="tabs">
+                <button class="tab active" data-tab="reports">
+                    <i class="fas fa-flag"></i> Laporan
+                    <span class="tab-badge">12</span>
+                </button>
+                <button class="tab" data-tab="counseling">
+                    <i class="fas fa-comments"></i> Konseling
+                    <span class="tab-badge">8</span>
+                </button>
+                <button class="tab" data-tab="selfcheck">
+                    <i class="fas fa-heartbeat"></i> Self-Check
+                    <span class="tab-badge">15</span>
+                </button>
+                <button class="tab" data-tab="activities">
+                    <i class="fas fa-chart-line"></i> Aktivitas
+                    <span class="tab-badge">24</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Reports Tab -->
+        <div class="tab-content active" id="reportsTab">
+            <!-- Reports List -->
+            <div class="history-list">
+                <!-- Report Card 1 -->
+                <div class="history-card report completed">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3>#RPT-012 - Cyberbullying</h3>
+                            <span class="badge badge-completed">Selesai</span>
+                        </div>
+                        <div class="card-meta">
+                            <span class="date">28 Des 2023</span>
+                            <span class="time">14:30</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p class="card-description">
+                            "Akun media sosial saya diretas dan digunakan untuk menyebarkan konten tidak pantas dengan nama saya."
+                        </p>
+                        
+                        <div class="card-details">
+                            <div class="detail-item">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Konselor: Sari Wijaya</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Online (Social Media)</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Pelapor: Anonim</span>
+                            </div>
+                        </div>
+                        
+                        <div class="timeline">
+                            <div class="timeline-item completed">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">28 Des</span>
+                                    <p>Laporan diterima dan diverifikasi</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item completed">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">29 Des</span>
+                                    <p>Investigasi bukti digital</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item completed">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">30 Des</span>
+                                    <p>Koordinasi dengan pihak kampus</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item completed">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <span class="timeline-date">31 Des</span>
+                                    <p>Kasus selesai, akun diamankan</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card-notes">
+                            <h4><i class="fas fa-sticky-note"></i> Catatan Konselor:</h4>
+                            <p>"Akun telah diamankan dan pelaku telah diidentifikasi. Rekomendasi: ganti password secara berkala dan aktifkan 2FA."</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <button class="btn btn-outline btn-sm view-detail" data-id="RPT-012">
+                            <i class="fas fa-eye"></i> Lihat Detail
+                        </button>
+                        <button class="btn btn-outline btn-sm export-btn" data-id="RPT-012">
+                            <i class="fas fa-download"></i> Ekspor
+                        </button>
+                        <button class="btn btn-primary btn-sm followup-btn" data-id="RPT-012">
+                            <i class="fas fa-redo"></i> Follow-up
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Report Card 2 -->
+                <div class="history-card report processing">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3>#RPT-011 - Verbal Bullying</h3>
+                            <span class="badge badge-processing">Diproses</span>
+                        </div>
+                        <div class="card-meta">
+                            <span class="date">26 Des 2023</span>
+                            <span class="time">10:15</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p class="card-description">
+                            "Dihina dan diolok-olok di grup WhatsApp kelas karena penampilan fisik."
+                        </p>
+                        
+                        <div class="card-details">
+                            <div class="detail-item">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Konselor: Budi Santoso</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Fakultas Teknologi Informasi</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-paperclip"></i>
+                                <span>3 bukti terlampir</span>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-container">
+                            <div class="progress-label">
+                                <span>Status: Investigasi dan Mediasi</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 75%"></div>
+                            </div>
+                            <div class="progress-steps">
+                                <span class="step completed">Diterima</span>
+                                <span class="step completed">Divestigasi</span>
+                                <span class="step current">Mediasi</span>
+                                <span class="step">Selesai</span>
+                            </div>
+                        </div>
+                        
+                        <div class="estimated-completion">
+                            <i class="fas fa-clock"></i>
+                            <span>Estimasi selesai: 2 Jan 2024</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <button class="btn btn-outline btn-sm update-status">
+                            <i class="fas fa-sync-alt"></i> Perbarui Status
+                        </button>
+                        <button class="btn btn-outline btn-sm add-evidence">
+                            <i class="fas fa-plus-circle"></i> Tambah Bukti
+                        </button>
+                        <button class="btn btn-primary btn-sm contact-counselor">
+                            <i class="fas fa-comment"></i> Hubungi Konselor
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Report Card 3 -->
+                <div class="history-card report pending">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3>#RPT-010 - Fisik Bullying</h3>
+                            <span class="badge badge-pending">Menunggu</span>
+                        </div>
+                        <div class="card-meta">
+                            <span class="date">24 Des 2023</span>
+                            <span class="time">16:45</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p class="card-description">
+                            "Didorong dan dijegal di tangga gedung fakultas oleh sekelompok mahasiswa."
+                        </p>
+                        
+                        <div class="card-details">
+                            <div class="detail-item">
+                                <i class="fas fa-user-tie"></i>
+                                <span>Menunggu penugasan</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Gedung FTI Lantai 3</span>
+                            </div>
+                            <div class="detail-item">
+                                <i class="fas fa-clock"></i>
+                                <span>Menunggu 2 hari</span>
+                            </div>
+                        </div>
+                        
+                        <div class="waiting-reason">
+                            <h4><i class="fas fa-info-circle"></i> Status:</h4>
+                            <p>Laporan sedang dalam antrian untuk ditugaskan ke konselor. Rata-rata waktu tunggu: 1-3 hari kerja.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <button class="btn btn-outline btn-sm cancel-report">
+                            <i class="fas fa-times"></i> Batalkan Laporan
+                        </button>
+                        <button class="btn btn-outline btn-sm emergency-btn">
+                            <i class="fas fa-exclamation-triangle"></i> Eskalasi Darurat
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Report Card 4 -->
+                <div class="history-card report rejected">
+                    <div class="card-header">
+                        <div class="card-title">
+                            <h3>#RPT-009 - Social Bullying</h3>
+                            <span class="badge badge-rejected">Ditolak</span>
+                        </div>
+                        <div class="card-meta">
+                            <span class="date">20 Des 2023</span>
+                            <span class="time">09:30</span>
+                        </div>
+                    </div>
+                    
+                    <div class="card-content">
+                        <p class="card-description">
+                            "Dikucilkan dari kelompok belajar dan disebarkan rumor tidak benar."
+                        </p>
+                        
+                        <div class="rejection-reason">
+                            <h4><i class="fas fa-exclamation-circle"></i> Alasan Penolakan:</h4>
+                            <p>"Laporan tidak memiliki bukti yang cukup dan informasi yang jelas. Silakan ajukan ulang dengan bukti konkret seperti screenshot percakapan atau saksi yang bisa diverifikasi."</p>
+                        </div>
+                        
+                        <div class="suggestions">
+                            <h4><i class="fas fa-lightbulb"></i> Saran Perbaikan:</h4>
+                            <ul>
+                                <li>Kumpulkan bukti berupa screenshot atau rekaman</li>
+                                <li>Identifikasi saksi yang bersedia memberikan keterangan</li>
+                                <li>Sebutkan waktu dan lokasi kejadian dengan spesifik</li>
+                                <li>Ajukan ulang dalam 7 hari</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="card-footer">
+                        <button class="btn btn-outline btn-sm resubmit-btn">
+                            <i class="fas fa-redo"></i> Ajukan Ulang
+                        </button>
+                        <button class="btn btn-outline btn-sm help-btn">
+                            <i class="fas fa-question-circle"></i> Minta Bantuan
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More -->
+            <div class="load-more">
+                <button class="btn btn-outline btn-full" id="loadMoreReports">
+                    <i class="fas fa-chevron-down"></i> Tampilkan Lebih Banyak Laporan
+                </button>
+            </div>
+        </div>
+
+        <!-- Counseling Tab -->
+        <div class="tab-content" id="counselingTab">
+            <!-- Counseling content loaded by JS -->
+        </div>
+
+        <!-- Self-Check Tab -->
+        <div class="tab-content" id="selfcheckTab">
+            <!-- Self-check content loaded by JS -->
+        </div>
+
+        <!-- Activities Tab -->
+        <div class="tab-content" id="activitiesTab">
+            <!-- Activities content loaded by JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div class="empty-state" id="emptyState" style="display: none;">
+            <div class="empty-icon">
+                <i class="fas fa-inbox"></i>
+            </div>
+            <h3>Tidak Ada Data</h3>
+            <p>Tidak ada riwayat yang sesuai dengan filter yang dipilih.</p>
+            <button class="btn btn-primary" id="resetFiltersBtn">
+                <i class="fas fa-filter"></i> Reset Filter
+            </button>
+        </div>
+    </main>
+
+    <!-- Filter Modal -->
+    <div class="modal-overlay" id="filterModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3><i class="fas fa-filter"></i> Filter Riwayat</h3>
+                <button class="btn-icon close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <div class="filter-section">
+                    <h4><i class="fas fa-calendar-alt"></i> Rentang Waktu</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="radio" name="timeRange" value="all" checked>
+                            <span>Semua Waktu</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="timeRange" value="7days">
+                            <span>7 Hari Terakhir</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="timeRange" value="30days">
+                            <span>30 Hari Terakhir</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="timeRange" value="3months">
+                            <span>3 Bulan Terakhir</span>
+                        </label>
+                        <label class="filter-option custom-date">
+                            <input type="radio" name="timeRange" value="custom">
+                            <span>Rentang Kustom</span>
+                        </label>
+                    </div>
+                    
+                    <div class="custom-date-range" id="customDateRange" style="display: none;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label">Dari Tanggal</label>
+                                <input type="date" class="form-control" id="dateFrom">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">Sampai Tanggal</label>
+                                <input type="date" class="form-control" id="dateTo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="filter-section">
+                    <h4><i class="fas fa-tag"></i> Status Laporan</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="status" value="completed" checked>
+                            <span class="badge badge-sm badge-completed">Selesai</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="status" value="processing" checked>
+                            <span class="badge badge-sm badge-processing">Diproses</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="status" value="pending">
+                            <span class="badge badge-sm badge-pending">Menunggu</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="status" value="rejected">
+                            <span class="badge badge-sm badge-rejected">Ditolak</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="filter-section">
+                    <h4><i class="fas fa-flag"></i> Jenis Bullying</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="checkbox" name="type" value="verbal" checked>
+                            <span>Verbal</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="type" value="physical">
+                            <span>Fisik</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="type" value="cyber">
+                            <span>Cyberbullying</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="type" value="social">
+                            <span>Social</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="checkbox" name="type" value="other">
+                            <span>Lainnya</span>
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="filter-section">
+                    <h4><i class="fas fa-sort-amount-down"></i> Urutkan Berdasarkan</h4>
+                    <div class="filter-options">
+                        <label class="filter-option">
+                            <input type="radio" name="sortBy" value="newest" checked>
+                            <span>Terbaru</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="sortBy" value="oldest">
+                            <span>Terlama</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="sortBy" value="priority">
+                            <span>Prioritas Tinggi</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="resetFilterBtn">
+                    <i class="fas fa-redo"></i> Reset
+                </button>
+                <button class="btn btn-primary" id="applyFilterBtn">
+                    <i class="fas fa-check"></i> Terapkan Filter
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Report Detail Modal -->
+    <div class="modal-overlay" id="reportDetailModal">
+        <div class="modal modal-lg">
+            <div class="modal-header">
+                <h3 id="detailModalTitle"></h3>
+                <button class="btn-icon close-modal"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <!-- Detail content loaded by JS -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-outline close-modal">Tutup</button>
+                <button class="btn btn-primary" id="printReportBtn">
+                    <i class="fas fa-print"></i> Cetak
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="index.html" class="bottom-nav-item">
+            <i class="fas fa-home bottom-nav-icon"></i>
+            <span>Home</span>
+        </a>
+        <a href="report.html" class="bottom-nav-item">
+            <i class="fas fa-flag bottom-nav-icon"></i>
+            <span>Lapor</span>
+        </a>
+        <a href="chat.html" class="bottom-nav-item">
+            <i class="fas fa-comments bottom-nav-icon"></i>
+            <span>Chat</span>
+        </a>
+        <a href="history.html" class="bottom-nav-item active">
+            <i class="fas fa-history bottom-nav-icon"></i>
+            <span>Riwayat</span>
+        </a>
+        <a href="#" class="bottom-nav-item" id="mobileFilterBtn">
+            <i class="fas fa-filter bottom-nav-icon"></i>
+            <span>Filter</span>
+        </a>
+    </nav>
+
+    <!-- JavaScript -->
+    <script src="js/app.js"></script>
+    <script src="js/history.js"></script>
+</body>
+</html>
